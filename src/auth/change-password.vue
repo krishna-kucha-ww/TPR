@@ -59,7 +59,7 @@ const changePassword = async () => {
         console.log('Status:', error.response?.status)
         console.log('Response:', error.response?.data)
 
-        errorMessage.value = error.response?.data?.detail || 'Failed to change password. Please try again.'
+        errorMessage.value = error.response?.data?.detail || error.response?.data?.old_password || 'Failed to change password. Please try again.'
     } finally {
         isLoading.value = false
     }

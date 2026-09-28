@@ -67,7 +67,14 @@ const { access, refresh, user } = response.data
     // Store user
     useCookie('userData').value = user
 
-    
+    const abilityRules = [
+      {
+        action: 'manage',
+        subject: 'all',
+      },
+    ]
+    ability.update(abilityRules)
+    useCookie('userAbilityRules').value = abilityRules
 
     // Redirect to `to` query if exist or redirect to index route
 
