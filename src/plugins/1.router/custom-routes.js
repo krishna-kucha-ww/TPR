@@ -79,6 +79,33 @@ const authRoutes = [
       unauthenticatedOnly: true,
     },
   },
+//   {
+//   path: '/auth/account-setting/:tab?',
+//   name: 'auth-account-setting-tab',
+//   component: () => import('@/auth/account-setting.vue'),
+//   meta: {
+//     layout: 'default',
+//   },
+// },
+]
+
+const userRoutes = [
+  {
+    path: '/user-2/list-2',
+    name: 'user-2-list',
+    component: () => import('@/user-2/list-2/index.vue'),
+    meta: {
+      layout: 'default',
+    },
+  },
+  {
+    path: '/user-2/view-2/:id',
+    name: 'user-2-view',
+    component: () => import('@/user-2/view-2/[id].vue'),
+    meta: {
+      layout: 'default',
+    },
+  },
 ]
 
 // 👉 Your feature routes
@@ -103,9 +130,11 @@ export const customRedirects = [
   { path: '/register', redirect: to => ({ name: 'register', query: to.query }) },
   { path: '/change-password', redirect: to => ({ name: 'change-password', query: to.query }) },
   { path: '/forgot-password', redirect: to => ({ name: 'forgot-password', query: to.query }) },
+  // { path: '/account-setting', redirect: to => ({ name: 'auth-account-setting-tab', params: { tab: to.params.tab } }) },
 ]
 
 export const customRoutes = [
   ...authRoutes,
   ...appRoutes,
+  ...userRoutes,
 ]

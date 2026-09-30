@@ -67,6 +67,10 @@ const { access, refresh, user } = response.data
     // Store user
     useCookie('userData').value = user
 
+    // Store permission after login 
+    localStorage.setItem('permissions', JSON.stringify(user.permissions || []))
+    console.log('User Permissions:', user.permissions || [])
+
     const abilityRules = [
       {
         action: 'manage',
