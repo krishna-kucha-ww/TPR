@@ -1,5 +1,5 @@
 <script setup>
-import UserBioPanel from '@/views/apps/user-2/view-2/UserBioPanel.vue'
+import UserBioPanel from '@/pages/apps/user-2/view-2/UserBioPanel-2.vue'
 import UserTabAccount from '@/views/apps/user/view/UserTabAccount.vue'
 import UserTabBillingsPlans from '@/views/apps/user/view/UserTabBillingsPlans.vue'
 import UserTabConnections from '@/views/apps/user/view/UserTabConnections.vue'

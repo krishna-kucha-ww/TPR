@@ -2,6 +2,7 @@
 import api from '@/api/axios'
 import { avatarText } from '@core/utils/formatters'
 import { onMounted, ref, watch } from 'vue'
+import AddNewUserDrawer from '@/pages/apps/user-2/list-2/AddNewUserDrawer-2.vue'
 
 const searchQuery = ref('')
 const selectedRole = ref()

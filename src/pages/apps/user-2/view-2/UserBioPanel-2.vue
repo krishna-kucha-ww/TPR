@@ -1,5 +1,7 @@
 <script setup>
 import api from '@/api/axios'
+import { ref } from 'vue'
+import UserInfoEditDialog from '@/pages/apps/user-2/view-2/UserInfoEditDialog-2.vue'
 
 const props = defineProps({
   userData: {
@@ -175,7 +177,7 @@ const deleteAvatar = async () => {
           <!-- 👉 Role chip -->
           <VChip
             label
-            :color="resolveUserRoleVariant(props.userData.role).color"
+            :color="resolveUserRoleVariant(props.userData.roles?.[0]).color"
             size="small"
             class="text-capitalize mt-4"
           >
@@ -199,9 +201,9 @@ const deleteAvatar = async () => {
                         </VBtn>
                     </div>
 
-                    <!-- <p class="text-body-1 mb-0">
+                     <p class="text-body-1 mb-0">
                         Allowed JPG, GIF or PNG. Max size of 2MB
-                    </p> -->
+                    </p> 
                     <p v-if="imageError" class="text-error mb-0">
                        {{ imageError }}
                     </p>

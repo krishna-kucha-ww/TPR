@@ -93,15 +93,16 @@ const userRoutes = [
   {
     path: '/user-2/list-2',
     name: 'user-2-list',
-    component: () => import('@/user-2/list-2/index.vue'),
+    component: () => import('@/pages/apps/user-2/list-2/index.vue'),
     meta: {
       layout: 'default',
     },
   },
+
   {
     path: '/user-2/view-2/:id',
     name: 'user-2-view',
-    component: () => import('@/user-2/view-2/[id].vue'),
+    component: () => import('@/pages/apps/user-2/view-2/[id].vue'),
     meta: {
       layout: 'default',
     },
