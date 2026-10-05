@@ -21,10 +21,8 @@ const props = defineProps({
 
 const roles = [
   { title: 'Admin', value: 'admin' },
-  { title: 'Author', value: 'author' },
   { title: 'Editor', value: 'editor' },
-  { title: 'Maintainer', value: 'maintainer' },
-  { title: 'Subscriber', value: 'subscriber' },
+  { title: 'Viewer', value: 'viewer' },
 ]
 
 const status = [
@@ -64,7 +62,18 @@ const onFormSubmit = async() => {
 
        console.log('User updated successfully:', response.data)
 
-      emit('submit', response.data)
+    //    Role assign
+      const roleRequestData = {
+        role_codes: userData.value.roles
+      }
+
+      const roleResponse = await api.post(`/users/${userData.value.id}/assign-roles/`, roleRequestData)
+      console.log('Roles assigned successfully:', roleResponse.data)
+
+      emit('submit', {
+      ...response.data,
+      roles: userData.value.roles,
+    })
       emit('update:isDialogVisible', false)
 
     } catch (error) {
